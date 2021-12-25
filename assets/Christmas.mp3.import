@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Christmas.mp3-4ed10e37b7c6907495ca9dfc9b3c49b4.mp3str"
+
+[deps]
+
+source_file="res://assets/Christmas.mp3"
+dest_files=[ "res://.import/Christmas.mp3-4ed10e37b7c6907495ca9dfc9b3c49b4.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

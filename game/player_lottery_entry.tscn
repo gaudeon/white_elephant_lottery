@@ -1,0 +1,110 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/button_normal.tres" type="StyleBox" id=1]
+[ext_resource path="res://assets/button_pressed.tres" type="StyleBox" id=2]
+
+[sub_resource type="Theme" id=1]
+
+[sub_resource type="DynamicFontData" id=2]
+font_path = "res://assets/ChristmasStory-3zXXy.ttf"
+
+[sub_resource type="DynamicFont" id=3]
+size = 64
+use_mipmaps = true
+use_filter = true
+font_data = SubResource( 2 )
+
+[sub_resource type="DynamicFontData" id=4]
+font_path = "res://assets/Festival-r1g8.ttf"
+
+[sub_resource type="DynamicFont" id=5]
+use_mipmaps = true
+font_data = SubResource( 4 )
+
+[sub_resource type="DynamicFontData" id=6]
+font_path = "res://assets/Festival-r1g8.ttf"
+
+[sub_resource type="DynamicFont" id=7]
+size = 24
+use_mipmaps = true
+use_filter = true
+font_data = SubResource( 6 )
+
+[node name="Start" type="Control"]
+margin_left = 212.0
+margin_right = 812.0
+margin_bottom = 600.0
+theme = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerLabel" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -185.0
+margin_top = -1.0
+margin_right = 186.0
+margin_bottom = 196.0
+custom_fonts/font = SubResource( 3 )
+align = 1
+
+[node name="Button" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -51.0
+margin_top = -16.0
+margin_right = 57.0
+margin_bottom = 8.0
+custom_fonts/font = SubResource( 5 )
+custom_styles/hover = ExtResource( 1 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/focus = ExtResource( 2 )
+custom_styles/normal = ExtResource( 1 )
+text = "Next"
+
+[node name="Number_Label" type="Label" parent="."]
+margin_left = 81.0
+margin_top = 172.0
+margin_right = 197.0
+margin_bottom = 199.0
+custom_fonts/font = SubResource( 7 )
+text = "Number"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Helper Text" type="Label" parent="."]
+margin_left = 57.0
+margin_top = 116.0
+margin_right = 560.0
+margin_bottom = 143.0
+custom_fonts/font = SubResource( 7 )
+text = "Enter your lottery number"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Error_Text" type="Label" parent="."]
+margin_left = 57.0
+margin_top = 83.0
+margin_right = 560.0
+margin_bottom = 110.0
+custom_fonts/font = SubResource( 7 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Number_LineEdit" type="LineEdit" parent="."]
+margin_left = 206.0
+margin_top = 176.0
+margin_right = 506.0
+margin_bottom = 200.0
+__meta__ = {
+"_edit_use_anchors_": false
+}

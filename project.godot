@@ -8,14 +8,44 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Reference",
+"class": "LotteryPool",
+"language": "GDScript",
+"path": "res://game/lib/LotteryPool.gd"
+}, {
+"base": "Reference",
+"class": "PlayOrder",
+"language": "GDScript",
+"path": "res://game/lib/PlayOrder.gd"
+}, {
+"base": "Reference",
+"class": "PlayerLottery",
+"language": "GDScript",
+"path": "res://game/lib/PlayerLottery.gd"
+}, {
+"base": "Reference",
+"class": "Players",
+"language": "GDScript",
+"path": "res://game/lib/Players.gd"
+} ]
 _global_script_class_icons={
+"LotteryPool": "",
+"PlayOrder": "",
+"PlayerLottery": "",
+"Players": ""
 }
 
 [application]
 
-config/name="YOUR_PROJECT_NAME_HERE"
+config/name="White Elephant Lottery"
+run/main_scene="res://game.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/fullscreen=true
+window/stretch/mode="2d"
 
 [editor_plugins]
 

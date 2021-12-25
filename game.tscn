@@ -1,0 +1,167 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://game.gd" type="Script" id=1]
+[ext_resource path="res://assets/background.jpg" type="Texture" id=2]
+[ext_resource path="res://assets/pillow.png" type="Texture" id=3]
+[ext_resource path="res://assets/robert_smile.png" type="Texture" id=4]
+[ext_resource path="res://assets/travis_smile.png" type="Texture" id=5]
+
+[sub_resource type="Gradient" id=3]
+offsets = PoolRealArray( 0, 0.273292, 0.645963, 1 )
+colors = PoolColorArray( 0.745117, 0.529755, 0.0727654, 1, 0.870117, 0.388855, 0.200535, 1, 0.780273, 0.198116, 0.198116, 1, 0, 0, 0, 1 )
+
+[sub_resource type="GradientTexture" id=4]
+gradient = SubResource( 3 )
+
+[sub_resource type="Curve" id=5]
+_data = [ Vector2( 0, 0.145053 ), 0.0, 0.0, 0, 0, Vector2( 0.277174, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=6]
+curve = SubResource( 5 )
+
+[sub_resource type="Curve" id=7]
+min_value = -200.0
+max_value = 200.0
+_data = [ Vector2( 0, 7.27274 ), 0.0, 0.0, 0, 0, Vector2( 1, -54.5454 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=8]
+curve = SubResource( 7 )
+
+[sub_resource type="ParticlesMaterial" id=2]
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 0.2
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 40.0
+initial_velocity_random = 1.0
+angular_velocity = 360.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+tangential_accel = 5.0
+tangential_accel_random = 1.0
+tangential_accel_curve = SubResource( 8 )
+angle = 360.0
+angle_random = 1.0
+scale = 0.3
+scale_random = 1.0
+scale_curve = SubResource( 6 )
+color_ramp = SubResource( 4 )
+
+[sub_resource type="CanvasItemMaterial" id=1]
+blend_mode = 3
+
+[sub_resource type="GDScript" id=9]
+script/source = "extends AudioStreamPlayer
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+"
+
+[node name="game" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_vertical_guides_": [  ]
+}
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 512, 300 )
+scale = Vector2( 0.183908, 0.161638 )
+texture = ExtResource( 2 )
+
+[node name="Particles2D" type="Particles2D" parent="."]
+position = Vector2( 58, 496 )
+scale = Vector2( 20, 7 )
+amount = 300
+lifetime = 0.9
+speed_scale = 0.6
+process_material = SubResource( 2 )
+
+[node name="Particles2D5" type="Particles2D" parent="."]
+position = Vector2( 76, 501 )
+scale = Vector2( 10, 7 )
+amount = 300
+speed_scale = 0.7
+process_material = SubResource( 2 )
+
+[node name="Particles2D6" type="Particles2D" parent="."]
+position = Vector2( 106, 495 )
+scale = Vector2( 10, 7 )
+amount = 300
+speed_scale = 0.9
+process_material = SubResource( 2 )
+
+[node name="Particles2D7" type="Particles2D" parent="."]
+position = Vector2( 143, 491 )
+scale = Vector2( 10, 7 )
+amount = 300
+speed_scale = 0.78
+process_material = SubResource( 2 )
+
+[node name="Particles2D8" type="Particles2D" parent="."]
+position = Vector2( 180, 480 )
+scale = Vector2( 10, 7 )
+amount = 300
+speed_scale = 0.97
+process_material = SubResource( 2 )
+
+[node name="Particles2D2" type="Particles2D" parent="."]
+position = Vector2( 88, 489 )
+scale = Vector2( 20, 7 )
+amount = 300
+speed_scale = 0.8
+process_material = SubResource( 2 )
+
+[node name="Particles2D3" type="Particles2D" parent="."]
+position = Vector2( 121, 483 )
+scale = Vector2( 20, 7 )
+amount = 300
+process_material = SubResource( 2 )
+
+[node name="Particles2D4" type="Particles2D" parent="."]
+position = Vector2( 158, 475 )
+scale = Vector2( 20, 7 )
+amount = 300
+speed_scale = 0.9
+process_material = SubResource( 2 )
+
+[node name="Pillow" type="Sprite" parent="."]
+position = Vector2( 132, 467 )
+scale = Vector2( 0.214322, 0.182099 )
+texture = ExtResource( 3 )
+
+[node name="Panel" type="Panel" parent="."]
+material = SubResource( 1 )
+margin_left = 212.0
+margin_right = 812.0
+margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+script = SubResource( 9 )
+
+[node name="RobertSmile" type="Sprite" parent="."]
+position = Vector2( 822, 554 )
+scale = Vector2( 0.0774374, 0.0915898 )
+z_index = 1
+texture = ExtResource( 4 )
+
+[node name="TravisSmile" type="Sprite" parent="."]
+position = Vector2( 209.5, 533.313 )
+scale = Vector2( 0.207838, 0.233497 )
+z_index = 1
+texture = ExtResource( 5 )

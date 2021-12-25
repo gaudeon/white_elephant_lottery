@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/First-Snow.mp3-b0ff06360dc420543520bd6f3e942307.mp3str"
+
+[deps]
+
+source_file="res://assets/First-Snow.mp3"
+dest_files=[ "res://.import/First-Snow.mp3-b0ff06360dc420543520bd6f3e942307.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
